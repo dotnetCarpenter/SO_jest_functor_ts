@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+			"checkJs": true,
+	},
+	"include": [
+			"functor.js",
+			"functor.test.js",
+			"extensions.ts",
+	]
+}

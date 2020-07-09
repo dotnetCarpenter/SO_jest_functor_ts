@@ -1,9 +1,7 @@
 // @ts-check
 'use strict'
 
-/**
- * @param {*} v Any value
- */
+/** @type {Functor} */
 function just(v) {
 	return {
 		fmap:

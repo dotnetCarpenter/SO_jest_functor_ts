@@ -1,5 +1,7 @@
 // @ts-check
 
+// https://stackoverflow.com/questions/52082800/how-to-describe-the-interface-of-a-simple-just-functor-in-typescript
+
 const just = require('./functor.js')
 
 test('equational reasoning (identity)', () => {
@@ -7,12 +9,6 @@ test('equational reasoning (identity)', () => {
 })
 
 expect.extend({
-  /** Compare the two values inside two functors with Object.is
-   * @method
-   * @augments jest.Matchers
-   * @param {*} actual The functor you want to test.
-   * @param {*} expected The functor you expect.
-   */
   functorToBe (actual, expected) {
     const actualValue = getFunctorValue(actual)
     const expectedValue = getFunctorValue(expected)
