@@ -1,7 +1,14 @@
+// @ts-check
+'use strict'
+
+/**
+ * @param {*} v Any value
+ */
 function just(v) {
-	'use strict'
 	return {
-		fmap: f => just(f(v))
+		fmap:
+			/** @param {(arg0: any) => any} f */
+			f => just(f(v))
 	}
 }
 

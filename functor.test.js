@@ -1,14 +1,10 @@
+// @ts-check
+
 const just = require('./functor.js')
 
 test('equational reasoning (identity)', () => {
-
-	expect(
-		getFunctorValue( just(1) )
-	).toBe(
-		getFunctorValue( just(1) )
-	)
-
-});
+  expect(just(1)).functorToBe(just(1))
+})
 
 expect.extend({
   /** Compare the two values inside two functors with Object.is
@@ -30,15 +26,10 @@ expect.extend({
   }
 })
 
-test('equational reasoning (identity)', () => {
-  expect(just(1)).functorToBe(just(1))
-})
-
-
 function getFunctorValue (func) {
 	let a
 
-	func.fmap(a => b = a)
+	func.fmap(b => a = b)
 
 	return a
 }
